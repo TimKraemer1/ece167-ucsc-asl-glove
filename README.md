@@ -2,24 +2,45 @@
 
 ## ASL Character Detection Glove
 
-This is the code repository for our ECE167 final project, a glove that is
-intended to detect American Sign Language (ASL) characters. It serves as a proof
-of concept for further exploration of ASL parsing and translation, using a PIC32
-Uno32 microcontroller.
+This repository contains the code and resources for our **ECE 167: Sensors and Sensing Technology** final project—a glove designed to detect American Sign Language (ASL) characters. The project serves as a proof of concept for future work in ASL parsing and translation, leveraging a **PIC32 Uno32 microcontroller**.
 
-All code that runs on the Uno32 is contained in the `ASL_Glove_Flex_Test.X`
-folder. The main code within this folder is `Flexion_Test.c`, which is compiled
-by the MPLAB X IDE to be programmed onto the microcontroller. Compilation can be
-done using `make` in a terminal, but it is easier to use the "Make and program
-device" feature after opening the folder in the IDE.
+---
 
-This code relies on the custom `Node.h/.c` library, contained within the
-`Common` folder, with other library headers and source files. This library
-contains all the necessary functions and data structures to create and interact
-with the tree structure used for detecting characters. The library does not need
-direct interaction, and is already included in compilation by the IDE.
+## 📂 Repository Structure
 
-The `matlab` folder contains the glove calibration MATLAB code, which compares
-unfiltered and filtered flex sensor testing. The `Progress Images` folder
-contains a couple images of our work on the data tree and traversal algorithm,
-as well as graphs from the MATLAB code.
+- `ASL_Glove_Flex_Test.X/`  
+  Contains all the embedded code running on the Uno32.  
+  - The main source file: `Flexion_Test.c`  
+  - Compilation via MPLAB X IDE or `make` in a terminal  
+  - Uses the custom `Node` library for tree data structure management  
+
+- `Common/`  
+  Custom library files (`Node.h/.c` and others) providing functions and data structures to build and interact with the detection tree. This library is automatically included in the build process and typically requires no direct interaction.
+
+- `matlab/`  
+  MATLAB scripts for glove calibration, including comparisons between filtered and unfiltered flex sensor data.
+
+- `Progress Images/`  
+  Images documenting progress on the tree traversal algorithm and graphs generated from MATLAB calibration data.
+
+---
+
+## 🛠️ Development Environment
+
+- **Microcontroller:** PIC32 Uno32  
+- **IDE:** MPLAB X  
+- **Compilation:** IDE “Make and program device” feature or terminal `make` command  
+- **Calibration & Analysis:** MATLAB
+
+---
+
+## 🎯 Project Goals
+
+- Detect ASL characters through flex sensor data captured by a glove  
+- Use a tree-based algorithm to identify character gestures  
+- Provide a foundation for future ASL translation systems
+
+---
+
+Feel free to explore the code, calibration scripts, and documentation for more details on implementation and performance.
+
